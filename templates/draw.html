@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Simple Web using Python Flask</title>
+
+
+<script>
+
+function myFunction() {
+
+let inputvalue = document.getElementsByName("roundsymbol");
+let displayvalue  =  inputvalue[0].value ; 
+location.href = "/draw/" + String(displayvalue)
+
+}
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<div style="display: flex ;  justify-content: center ;    padding-top:30px; width: auto ; "> 
+<div style="display: flex ; flex-direction : column ;   padding: 21px;  ">
+
+   <div style="display: flex ; flex-direction : row; justify-content: space-evenly ; "  >
+<a href="/" >Home</a>
+<a href="/tech" >Technology</a>
+<a href="/myid" >My ID</a>
+<a href="/draw" >Draw</a> 
+</div>
+
+
+ 
+
+
+<div style=" padding: 15px ;text-align:center ;  width: 800px; ">
+
+<h1>แสดงการเรียงอักขระ X</h1>
+ 
+  <div>
+กรุณาใส่จำนวนแถวที่ต้องการแสดงผล <input type="text" name= "roundsymbol"  value = "">
+
+ </div>
+ 
+
+   <div  style=" padding: 15px ;text-align: center ; "  >
+ <button onclick="myFunction()" style="width: 100px; " >Submit</button>
+
+   </div>
+
+
+
+
+<p>{{ defmsg }}</p>
+
+
+<ol style="list-style-type: none;">
+
+{% for symbol  in result %}
+<li style="text-align: left;">{{ symbol }}</li>
+{% endfor %}
+ 
+
+</ol> 
+ 
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
